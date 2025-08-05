@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto Paulis</title>
+  <!-- Estilo tipografía y fondo -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Cargar barra de navegación -->
+  <div id="navbar-container"></div>
+
+  <!-- Imagen de fondo -->
+  <div class="fondo-cocodrilo"></div>
+
+  <!-- Contenido principal -->
+  <div class="contenido-principal">
+    <h1>Proyecto de Predicción de Cáncer mediante Visión por Computadora</h1>
+    <p>Este proyecto tiene como objetivo...</p>
+    <p><strong>Misión:</strong> bla bla bla</p>
+    <p><strong>Visión:</strong> blo blo blo</p>
+  </div>
+
+  <!-- Script de carga del navbar -->
+  <script>
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
+      });
+  </script>
+</body>
+</html>

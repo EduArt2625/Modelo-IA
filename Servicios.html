@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Modelo de Predicción prueba 1</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Cargar barra de navegación desde navbar.html -->
+  <div id="navbar-container"></div>
+  <script>
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
+      });
+  </script>
+
+  <!-- Descripción del proyecto -->
+  <div style="padding: 15px;">
+    <h1 style="color: #232323;">Proyecto de Predicción de Cáncer mediante Visión por Computadora</h1>
+    <p style="font-size: 1.1em; line-height: 1.6;">
+      A continuación podrá subir una imagen o radiografía para que sea analizada por nuestro sistema de inteligencia artificial, el cual utiliza un modelo predictivo basado en redes neuronales convolucionales (CNN) para detectar posibles anomalías.
+    </p>
+    <h3>La imagen debe estar en formato .JPG o .PNG</h3>
+  </div>
+
+  <!-- Caja de subida de imágenes con previsualización -->
+  <div style="display: flex; justify-content: center; align-items: center; height: 70vh;">
+    <form id="formularioImagen" style="border: 2px dashed #aaa; padding: 40px; text-align: center; border-radius: 10px; background-color: #f9f9f9;">
+      <h3>Sube una imagen</h3>
+      <input type="file" id="imagenInput" accept="image/*" style="margin-top: 15px;">
+      <br><br>
+      <img id="preview" src="#" alt="Previsualización" style="max-width: 300px; max-height: 300px; display: none; border: 1px solid #ccc; border-radius: 5px; margin-top: 10px;">
+      <br><br>
+      <button type="submit" style="padding: 20px 20px; background-color: #80d5fc; color: rgb(0, 0, 0); border: none; border-radius: 10px; cursor: pointer; font-weight: bold;">
+        Enviar imagen
+      </button>
+      <br><br>
+      
+    </form>
+  </div>
+
+  <!-- Script para previsualización -->
+  <script>
+    const inputImagen = document.getElementById("imagenInput");
+    const preview = document.getElementById("preview");
+
+    inputImagen.addEventListener("change", function () {
+      const archivo = this.files[0];
+      if (archivo) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+          preview.style.display = "block";
+        };
+        reader.readAsDataURL(archivo);
+      } else {
+        preview.style.display = "none";
+        preview.src = "#";
+      }
+    });
+
+    document.getElementById("formularioImagen").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const archivo = inputImagen.files[0];
+      if (archivo) {
+        alert("Imagen cargada: " + archivo.name);
+        // Aquí podrías usar FormData y fetch para enviarla al servidor
+      } else {
+        alert("Por favor selecciona una imagen.");
+      }
+    });
+  </script>
+
+</body>
+</html>

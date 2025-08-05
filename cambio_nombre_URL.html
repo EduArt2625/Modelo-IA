@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo con HTTPS</title>
+    <style>
+        .image-container {
+            text-align: center;  /* Centra las imágenes horizontalmente */
+            margin: 20px;  /* Añade margen alrededor del contenedor de la imagen */
+        }
+
+        .image-container img {
+            width: 150px;  /* Establece el ancho de la imagen */
+            height: auto;  /* Ajusta automáticamente la altura manteniendo la proporción */
+            border: 2px solid #000;  /* Añade un borde negro de 2px de grosor a la imagen */
+            border-radius: 10px;  /* Redondea las esquinas de la imagen */
+            margin: 10px;  /* Añade margen alrededor de la imagen */
+        }
+
+        .custom-size {
+            width: 300px;
+            height: 400px;
+        }  
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <h2>Imágenes con HTTPS</h2>
+        <!-- Imagen con ruta relativa -->
+        <img src=  "Img/Hakuna_1.jpg" alt="Descripción de Imagen 1">
+        <!-- Imagen con ruta absoluta utilizando HTTPS -->
+        <img src="Img/Hakuna_2.jpg" alt="Descripción de Imagen 2" class="custom-size">
+        <!-- Imagen con ruta relativa a una carpeta superior -->
+        <img src="Img/Hakuna_3.jpg" alt="Descripción de Imagen 3">
+    </div>
+</body>
+</html>

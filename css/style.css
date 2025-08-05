@@ -1,0 +1,37 @@
+ body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .fondo-cocodrilo {
+      position: fixed;
+      width: 100%;
+      height: 265vh;
+      background-image: url('../Img/coco-drill.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    .contenido-principal {
+      position: relative;
+      z-index: 1;
+      padding: 60px;
+      color: black;
+    }
+
+    nav {
+      z-index: 10;
+      position: relative;
+    }
+
+    #navbar-container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+    }
